@@ -1,3 +1,6 @@
+# comba
+comba is a biblical webapp that contains the Adventista Biblical Commentary
+
 # README
 
 This README would normally document whatever steps are necessary to get the
