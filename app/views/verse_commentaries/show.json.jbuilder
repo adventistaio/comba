@@ -1,0 +1,1 @@
+json.partial! "verse_commentaries/verse_commentary", verse_commentary: @verse_commentary

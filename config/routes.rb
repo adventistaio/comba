@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :verse_commentaries
   resources :verses
   resources :chapters
   resources :book_commentaries

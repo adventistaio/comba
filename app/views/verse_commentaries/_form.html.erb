@@ -1,0 +1,27 @@
+<%= form_for(verse_commentary) do |f| %>
+  <% if verse_commentary.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(verse_commentary.errors.count, "error") %> prohibited this verse_commentary from being saved:</h2>
+
+      <ul>
+      <% verse_commentary.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :commentary %>
+    <%= f.text_area :commentary %>
+  </div>
+
+  <div class="field">
+    <%= f.label :verse_id %>
+    <%= f.text_field :verse_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

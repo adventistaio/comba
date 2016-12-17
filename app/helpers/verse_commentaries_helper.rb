@@ -1,0 +1,2 @@
+module VerseCommentariesHelper
+end

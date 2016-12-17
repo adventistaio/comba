@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Commentary:</strong>
+  <%= @verse_commentary.commentary %>
+</p>
+
+<p>
+  <strong>Verse:</strong>
+  <%= @verse_commentary.verse %>
+</p>
+
+<%= link_to 'Edit', edit_verse_commentary_path(@verse_commentary) %> |
+<%= link_to 'Back', verse_commentaries_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Verse Commentaries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Commentary</th>
+      <th>Verse</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @verse_commentaries.each do |verse_commentary| %>
+      <tr>
+        <td><%= verse_commentary.commentary %></td>
+        <td><%= verse_commentary.verse %></td>
+        <td><%= link_to 'Show', verse_commentary %></td>
+        <td><%= link_to 'Edit', edit_verse_commentary_path(verse_commentary) %></td>
+        <td><%= link_to 'Destroy', verse_commentary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Verse Commentary', new_verse_commentary_path %>
