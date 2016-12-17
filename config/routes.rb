@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :book_commentaries
   resources :books
   resources :sections
   resources :categories

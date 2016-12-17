@@ -1,0 +1,2 @@
+module BookCommentariesHelper
+end

@@ -1,0 +1,1 @@
+json.partial! "book_commentaries/book_commentary", book_commentary: @book_commentary

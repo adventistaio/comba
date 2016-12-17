@@ -1,0 +1,27 @@
+<%= form_for(book_commentary) do |f| %>
+  <% if book_commentary.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(book_commentary.errors.count, "error") %> prohibited this book_commentary from being saved:</h2>
+
+      <ul>
+      <% book_commentary.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :commentary %>
+    <%= f.text_area :commentary %>
+  </div>
+
+  <div class="field">
+    <%= f.label :book_id %>
+    <%= f.text_field :book_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
