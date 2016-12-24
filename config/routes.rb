@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'home/index'
+  root 'home#index'
+
   resources :verse_commentaries
   resources :verses
   resources :chapters
