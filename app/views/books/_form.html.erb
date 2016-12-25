@@ -26,6 +26,13 @@
     <%= f.text_field :category_id %>
   </div>
 
+  <%= f.fields_for :book_commentary do |bc| %>
+    <div class="field">
+      <%= bc.label :commentary %>
+      <%= bc.text_area :commentary %>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
