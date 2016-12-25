@@ -1,24 +1,22 @@
 <p id="notice"><%= notice %></p>
-
+<h1><%= @verse.book.name + ' ' + @verse.chapter.number.to_s + ':' + @verse.number.to_s %></h1>
 <p>
-  <strong>Verse:</strong>
-  <%= @verse.verse %>
+  <% @verse.chapter.verses.each do |verse| %>
+    <%= link_to verse.number, verse_path(verse) %>
+  <% end %>
 </p>
+<h2><%= @verse.verse %></h3>
 
-<p>
-  <strong>Number:</strong>
-  <%= @verse.number %>
-</p>
-
-<p>
-  <strong>Chapter:</strong>
-  <%= @verse.chapter %>
-</p>
-
-<p>
-  <strong>Book:</strong>
-  <%= @verse.book %>
-</p>
+<div class="">
+  <h2>Comentario</h2>
+  <div class="">
+    <% if @verse.verse_commentary  %>
+      <%= @verse.verse_commentary.commentary %>
+    <% else %>
+      Este versiculo no tiene comentario.
+    <% end %>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_verse_path(@verse) %> |
-<%= link_to 'Back', verses_path %>
+<%= link_to 'Back', chapter_path(@verse.chapter) %>

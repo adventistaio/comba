@@ -1,14 +1,19 @@
 <p id="notice"><%= notice %></p>
-
+<h1><%= @chapter.book.name + "  " + @chapter.number.to_s %></h1>
 <p>
-  <strong>Number:</strong>
-  <%= @chapter.number %>
+  <% @chapter.book.chapters.each do |chapter| %>
+    <%= link_to chapter.number, chapter_path(chapter) %>
+  <% end %>
 </p>
-
-<p>
-  <strong>Book:</strong>
-  <%= @chapter.book %>
-</p>
-
-<%= link_to 'Edit', edit_chapter_path(@chapter) %> |
+<div class="">
+  <h2>Versos</h2>
+  <div class="">
+    <% @chapter.verses.each do |verse| %>
+      <div class="">
+        <%= link_to verse.number, verse_path(verse) %>
+        <%= verse.verse %>
+      </div>
+    <% end %>
+  </div>
+</div>
 <%= link_to 'Back', chapters_path %>
