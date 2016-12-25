@@ -1,2 +1,6 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1>Comentario Biblico Adventista</h1>
+<p>Profundiza en el estudio de la Biblia, con comentarios de cada versiculo en la Biblia.</p>
+<%= link_to 'Ver Libros', books_path %>
+
+<% today_verse = Verse.where('id = ?', rand(Verse.count)) %>
+<h3><%= today_verse[0].verse %></h3>
