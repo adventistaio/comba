@@ -6,6 +6,12 @@
     <%= @book.section.name %> -
     <%= link_to @book.category.name, category_path(@book.category) %>
   </p>
+
+  <p>
+    <% @book.chapters.each do |chapter| %>
+      <%= link_to chapter.number, chapter_path(chapter) %>
+    <% end %>
+  </p>
 </div>
 
 <div>
