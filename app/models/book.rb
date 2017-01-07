@@ -5,4 +5,12 @@ class Book < ApplicationRecord
   has_many :chapters
 
   accepts_nested_attributes_for :book_commentary
+
+  def next
+    Book.where("id > ?", id).first
+  end
+
+  def prev
+    Book.where("id < ?", id).last
+  end
 end
