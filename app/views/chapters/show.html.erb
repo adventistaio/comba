@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
-<h1><%= @chapter.book.name + "  " + @chapter.number.to_s %></h1>
+<h1>
+  <%= link_to @chapter.book.name, @chapter.book %>
+  <%= link_to '<', @chapter.prev if !@chapter.prev.nil? %>
+  <%= @chapter.number.to_s %>
+  <%= link_to '>', @chapter.next if !@chapter.next.nil? %>
+</h1>
 <p>
   <% @chapter.book.chapters.each do |chapter| %>
     <%= link_to chapter.number, chapter_path(chapter) %>

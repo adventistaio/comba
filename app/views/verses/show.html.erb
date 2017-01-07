@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
-<h1><%= @verse.book.name + ' ' + @verse.chapter.number.to_s + ':' + @verse.number.to_s %></h1>
+<h1>
+  <%= link_to @verse.book.name, @verse.book %>
+  <%= @verse.chapter.number.to_s %>:
+  <%= link_to '<', @verse.prev if !@verse.prev.nil? %>
+  <%= @verse.number.to_s %>
+  <%= link_to '>', @verse.next if !@verse.next.nil? %>
+</h1>
 <p>
   <% @verse.chapter.verses.each do |verse| %>
     <%= link_to verse.number, verse_path(verse) %>
