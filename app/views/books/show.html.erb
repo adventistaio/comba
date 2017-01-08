@@ -17,7 +17,7 @@
 <div>
   <h2>Comentario Bíblico</h2>
   <div>
-    <%= @book.book_commentary.commentary %>
+    <%= markdown(@book.book_commentary.commentary).html_safe %>
     <br>
     <%= link_to 'Editar comentario', edit_book_commentary_path(@book.book_commentary) %>
   </div>

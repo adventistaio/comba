@@ -1,6 +1,6 @@
 class BookCommentariesController < ApplicationController
   before_action :set_book_commentary, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, only: [:edit, :update, :destroy]
   # GET /book_commentaries
   # GET /book_commentaries.json
   def index

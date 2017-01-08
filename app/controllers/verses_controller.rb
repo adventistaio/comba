@@ -1,6 +1,7 @@
 class VersesController < ApplicationController
   before_action :set_verse, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, only: [:edit, :update, :destroy]
+  
   # GET /verses
   # GET /verses.json
   def index
