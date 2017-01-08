@@ -28,7 +28,7 @@ class BookCommentariesController < ApplicationController
 
     respond_to do |format|
       if @book_commentary.save
-        format.html { redirect_to @book_commentary, notice: 'Book commentary was successfully created.' }
+        format.html { redirect_to @book_commentary.book, notice: 'Book commentary was successfully created.' }
         format.json { render :show, status: :created, location: @book_commentary }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class BookCommentariesController < ApplicationController
   def update
     respond_to do |format|
       if @book_commentary.update(book_commentary_params)
-        format.html { redirect_to @book_commentary, notice: 'Book commentary was successfully updated.' }
+        format.html { redirect_to @book_commentary.book, notice: 'Book commentary was successfully updated.' }
         format.json { render :show, status: :ok, location: @book_commentary }
       else
         format.html { render :edit }

@@ -18,8 +18,7 @@
   <h2>Comentario Bíblico</h2>
   <div>
     <%= @book.book_commentary.commentary %>
+    <br>
+    <%= link_to 'Editar comentario', edit_book_commentary_path(@book.book_commentary) %>
   </div>
 </div>
-
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>

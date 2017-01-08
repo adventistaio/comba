@@ -5,8 +5,7 @@
   <h2>Antiguo Testamento</h2>
   <% @books.where('section_id = ?', 1).each do |book| %>
   <div>
-    <%= link_to book.name, book_path(book) %> -
-    <%= link_to 'editar', edit_book_path(book) %>
+    <%= link_to book.name, book_path(book) %>
   </div>
   <% end %>
 </div>
@@ -16,8 +15,7 @@
   <h2>Nuevo Testamento</h2>
   <% @books.where('section_id = ?', 2).each do |book| %>
   <div>
-    <%= link_to book.name, book_path(book) %> -
-    <%= link_to 'editar', edit_book_path(book) %>
+    <%= link_to book.name, book_path(book) %>
   </div>
   <% end %>
 </div>
