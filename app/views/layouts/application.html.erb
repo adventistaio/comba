@@ -6,24 +6,25 @@
 
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
-    <header>
-      <div class="">
-        <p>
-          <% if user_signed_in? %>
-            <%= link_to "cuenta", edit_user_registration_path %>
-            <%= current_user.email %> -
-            <%= link_to "salir", destroy_user_session_path, :method => :delete  %>
-          <% end %>
-        </p>
-      </div>
-    </header>
-    <%= yield %>
+    <%= render 'partials/admin_menu' if user_signed_in? %>
+    <div id="headerSection" class="row expanded text-center">
+      <header>
+
+        <%= "<h1 class='logo-text'>#{link_to 'comba', root_path }</h1>".html_safe if controller_name == 'home' %>
+        <%= "<h2 class='logo-text'>#{link_to 'comba', root_path }</h2>".html_safe if controller_name != 'home' %>
+        <span>Comentario Bíblico Adventista</span>
+      </header>
+    </div>
+    <div id="content">
+      <%= yield %>
+    </div>
 
   </body>
 </html>
