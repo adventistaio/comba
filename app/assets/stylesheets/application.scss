@@ -14,14 +14,12 @@
  *= require_self
  *= require foundation_and_overrides
  *= require foundation-icons
- */
-
-@import url("ficons/foundation-icons.css");
+*/
 
 a:hover{
   background: rgb(47, 154, 177);
   border-radius: .2em;
-  padding: .2em .4em 0 .4em;
+  color: white;
 }
 a:visited{
   color: black;
@@ -33,7 +31,18 @@ a.button:hover{
 }
 
 body{
-  margin: 0
+  margin: 0;
+  position: relative;
+  min-height: 100%;
+}
+
+h1,h2,h3,h4,h5,h6{
+  color: rgb(0, 128, 182);
+  font-family: 'Bree Serif', serif;
+}
+
+h1::before{
+  border-left: 2px solid black;
 }
 
 header .logo-text a,
@@ -53,6 +62,10 @@ header span{
   font-size: 1.1em;
 }
 
+html{
+  height: 100%;
+}
+
 #adminBar{
   background: rgb(51, 50, 50);
   color: white;
@@ -63,6 +76,20 @@ header span{
 #adminBar a,
 #adminBar a:hover{
   color: rgb(2, 198, 232);
+}
+
+#content{
+  padding-bottom: 5em;
+}
+
+#footerContainer footer{
+  color: white;
+  background: rgb(0, 45, 69);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-top: 1em;
 }
 
 #headerSection{
@@ -97,6 +124,53 @@ header span{
   background: none;
 }
 
+.book-title{
+  h1{
+    margin-bottom: 0;
+  }
+  p{
+    margin: 0;
+  }
+}
+
+.chapters{
+  padding: 4em 0;
+
+  a{
+    background-color: #e4e4e4;
+    font-size: 1.2em;
+    border-radius: .2em;
+    padding: .2em .2em;
+    transition: all .3s;
+
+    &:hover{
+      color: white;
+      background-color: rgb(255, 179, 0);
+      font-size: 1.8em;
+    }
+  }
+}
+
+.commentary{
+  background: rgb(244, 244, 244);
+}
+.commentary p{
+  font-size: 1.2em;
+}
+
+.commentary h2,
+.commentary h3,
+.commentary h4,
+.commentary h5,
+.commentary h6{
+  color: rgb(112, 0, 120);
+}
+
 .primary-font{
   font-family: 'Bree Serif', serif;
+}
+
+.flex-v-center{
+  display: flex;
+  align-items: center;
 }

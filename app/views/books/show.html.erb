@@ -1,24 +1,32 @@
-<p id="notice"><%= notice %></p>
-<p><%= link_to '<- Libros', books_path %></p>
-<div class="">
-  <h1> <%= link_to '<', @book.prev if !@book.prev.nil? %> <%= @book.name %> <%= link_to '>', @book.next if !@book.nil? %></h1>
-  <p>
-    <%= @book.section.name %> -
-    <%= link_to @book.category.name, category_path(@book.category) %>
-  </p>
+<div class="row">
 
-  <p>
-    <% @book.chapters.each do |chapter| %>
+  <p id="notice"><%= notice %></p>
+  <div class="column small-12 text-center book-title">
+    <h1 class="detailed"> <%= link_to '<', @book.prev if !@book.prev.nil? %> <%= @book.name %> <%= link_to '>', @book.next if !@book.nil? %></h1>
+    <p>
+      <%= @book.section.name %><br>
+      <%= link_to @book.category.name, category_path(@book.category) %>
+    </p>
+
+  </div>
+
+  <section class="column small-12 chapters text-center">
+      <% @book.chapters.each do |chapter| %>
       <%= link_to chapter.number, chapter_path(chapter) %>
-    <% end %>
-  </p>
-</div>
+      <% end %>
+  </section>
 
-<div>
-  <h2>Comentario Bíblico</h2>
-  <div>
-    <%= markdown(@book.book_commentary.commentary).html_safe %>
-    <br>
-    <%= link_to 'Editar comentario', edit_book_commentary_path(@book.book_commentary) %>
+  <div class="column small-12">
+    <div class="row align-middle">
+      <div class="column medium-10">
+        <h2>Comentario Bíblico</h2>
+      </div>
+      <div class="column medium-2">
+        <%= link_to 'Editar comentario', edit_book_commentary_path(@book.book_commentary), class: "button primary tiny" %>
+      </div>
+    </div>
+    <div class="column small-12 commentary">
+      <%= markdown(@book.book_commentary.commentary).html_safe %>
+    </div>
   </div>
 </div>
