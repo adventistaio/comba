@@ -39,6 +39,8 @@ gem 'redcarpet'
 gem 'foundation-rails'
 
 gem 'ckeditor'
+gem 'carrierwave'
+gem 'mini_magick'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
