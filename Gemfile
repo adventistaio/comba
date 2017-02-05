@@ -38,6 +38,8 @@ gem 'redcarpet'
 # Foundation for frontend
 gem 'foundation-rails'
 
+gem 'ckeditor'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
