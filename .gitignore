@@ -41,5 +41,6 @@ bower.json
 # Ignore Byebug command history file.
 .byebug_history
 
-# Ignore secrets
+# Ignore secrets & database configs
 /config/secrets.yml
+/config/database.yml
