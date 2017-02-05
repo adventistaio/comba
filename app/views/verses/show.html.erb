@@ -1,28 +1,35 @@
-<p id="notice"><%= notice %></p>
-<h1>
-  <%= link_to @verse.book.name, @verse.book %>
-  <%= @verse.chapter.number.to_s %>:
-  <%= link_to '<', @verse.prev if !@verse.prev.nil? %>
-  <%= @verse.number.to_s %>
-  <%= link_to '>', @verse.next if !@verse.next.nil? %>
-</h1>
-<p>
-  <% @verse.chapter.verses.each do |verse| %>
+<div class="row">
+  <p id="notice"><%= notice %></p>
+  <h1>
+    <%= link_to @verse.book.name, @verse.book %>
+    <%= @verse.chapter.number.to_s %>:
+    <%= link_to '<', @verse.prev if !@verse.prev.nil? %>
+    <%= @verse.number.to_s %>
+    <%= link_to '>', @verse.next if !@verse.next.nil? %>
+  </h1>
+  <p>
+    <% @verse.chapter.verses.each do |verse| %>
     <%= link_to verse.number, verse_path(verse) %>
-  <% end %>
-</p>
-<h2><%= @verse.verse %></h3>
-
-<div class="">
-  <h2>Comentario</h2>
-  <div class="">
-    <% if @verse.verse_commentary  %>
-      <%= @verse.verse_commentary.commentary %>
-    <% else %>
-      Este versiculo no tiene comentario.
     <% end %>
-  </div>
-</div>
+  </p>
+  <h2><%= @verse.verse %></h3>
 
-<%= link_to 'Edit', edit_verse_path(@verse) %> |
-<%= link_to 'Back', chapter_path(@verse.chapter) %>
+    <div class="column small-12">
+      <div class="row align-middle">
+        <div class="column medium-10">
+          <h2>Comentario Bíblico</h2>
+        </div>
+        <div class="column medium-2">
+          <%= link_to 'Crear Comentario', new_verse_verse_commentary_path(@verse), class: "button primary tiny" if @verse.verse_commentary.nil? %>
+          <%= link_to 'Editar Comentario', edit_verse_verse_commentary_path(@verse.verse_commentary), class: "button primary tiny" if !@verse.verse_commentary.nil? %>
+        </div>
+      </div>
+      <div class="column small-12 commentary">
+        <% if @verse.verse_commentary  %>
+          <%= markdown(@verse.verse_commentary.commentary).html_safe %>
+        <% else %>
+          Este versiculo no tiene comentario.
+        <% end %>
+      </div>
+    </div>
+</div>

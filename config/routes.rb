@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   get 'home/index'
   root 'home#index'
 
-  resources :verse_commentaries
-  resources :verses
+  resources :verses do
+    resources :verse_commentaries
+  end
   resources :chapters
   resources :book_commentaries
   resources :books

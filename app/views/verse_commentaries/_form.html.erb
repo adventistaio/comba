@@ -1,4 +1,4 @@
-<%= form_for(verse_commentary) do |f| %>
+<%= form_for([@verse, @verse_commentary]) do |f| %>
   <% if verse_commentary.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(verse_commentary.errors.count, "error") %> prohibited this verse_commentary from being saved:</h2>

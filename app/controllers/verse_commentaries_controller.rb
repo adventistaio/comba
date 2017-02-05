@@ -1,5 +1,6 @@
 class VerseCommentariesController < ApplicationController
   before_action :set_verse_commentary, only: [:show, :edit, :update, :destroy]
+  before_action :set_verse, only: [:new, :create]
 
   # GET /verse_commentaries
   # GET /verse_commentaries.json
@@ -14,7 +15,7 @@ class VerseCommentariesController < ApplicationController
 
   # GET /verse_commentaries/new
   def new
-    @verse_commentary = VerseCommentary.new
+    @verse_commentary = @verse.build_verse_commentary
   end
 
   # GET /verse_commentaries/1/edit
@@ -24,11 +25,11 @@ class VerseCommentariesController < ApplicationController
   # POST /verse_commentaries
   # POST /verse_commentaries.json
   def create
-    @verse_commentary = VerseCommentary.new(verse_commentary_params)
+    @verse_commentary = @verse.build_verse_commentary(verse_commentary_params)
 
     respond_to do |format|
       if @verse_commentary.save
-        format.html { redirect_to @verse_commentary, notice: 'Verse commentary was successfully created.' }
+        format.html { redirect_to @verse, notice: 'Verse commentary was successfully created.' }
         format.json { render :show, status: :created, location: @verse_commentary }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class VerseCommentariesController < ApplicationController
   def update
     respond_to do |format|
       if @verse_commentary.update(verse_commentary_params)
-        format.html { redirect_to @verse_commentary, notice: 'Verse commentary was successfully updated.' }
+        format.html { redirect_to @verse, notice: 'Verse commentary was successfully updated.' }
         format.json { render :show, status: :ok, location: @verse_commentary }
       else
         format.html { render :edit }
@@ -65,6 +66,10 @@ class VerseCommentariesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_verse_commentary
       @verse_commentary = VerseCommentary.find(params[:id])
+    end
+
+    def set_verse
+      @verse =  Verse.find(params[:verse_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
