@@ -14,5 +14,10 @@ module Comba
 
     # Forr add more paths to assets
     config.assets.paths << Rails.root.join("ficons")
+
+    # For ckeditor works on heroku
+    config.assets.precompile += Ckeditor.assets
+    config.assets.precompile += %w( ckeditor/* )
+    config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
   end
 end
