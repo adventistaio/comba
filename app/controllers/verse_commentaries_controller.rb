@@ -1,7 +1,7 @@
 class VerseCommentariesController < ApplicationController
   before_action :set_verse_commentary, only: [:show, :edit, :update, :destroy]
   before_action :set_verse, only: [:new, :create]
-  before_action :authenticate_user!, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   # GET /verse_commentaries
   # GET /verse_commentaries.json
