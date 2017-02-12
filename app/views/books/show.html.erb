@@ -1,6 +1,4 @@
 <div class="row">
-
-  <p id="notice"><%= notice %></p>
   <div class="column small-12 text-center book-title">
     <h1 class="detailed"> <%= link_to '<', @book.prev if !@book.prev.nil? %> <%= @book.name %> <%= link_to '>', @book.next if !@book.nil? %></h1>
     <p>
@@ -12,16 +10,18 @@
 
   <section class="column small-12 chapters text-center">
       <% @book.chapters.each do |chapter| %>
-      <%= link_to chapter.number, chapter_path(chapter) %>
+      <div class="link-container">
+        <%= link_to chapter.number, chapter_path(chapter) %>
+      </div>
       <% end %>
   </section>
 
   <div class="column small-12">
     <div class="row align-middle">
-      <div class="column medium-10">
-        <h2>Comentario Bíblico</h2>
+      <div class="column small-8">
+        <h2>Comentario del Libro</h2>
       </div>
-      <div class="column medium-2">
+      <div class="column small-4 text-right">
         <%= link_to 'Editar comentario', edit_book_commentary_path(@book.book_commentary), class: "button primary tiny" %>
       </div>
     </div>

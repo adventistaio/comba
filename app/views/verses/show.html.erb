@@ -1,25 +1,26 @@
 <div class="row">
-  <p id="notice"><%= notice %></p>
-  <h1>
+  <h2 class="text-center">
     <%= link_to @verse.book.name, @verse.book %>
     <%= @verse.chapter.number.to_s %>:
     <%= link_to '<', @verse.prev if !@verse.prev.nil? %>
     <%= @verse.number.to_s %>
     <%= link_to '>', @verse.next if !@verse.next.nil? %>
-  </h1>
-  <p>
+  </h2>
+  <section class="text-center verses">
     <% @verse.chapter.verses.each do |verse| %>
-    <%= link_to verse.number, verse_path(verse) %>
+    <div class="link-container">
+      <%= link_to verse.number, verse_path(verse) %>
+    </div>
     <% end %>
-  </p>
-  <h2><%= @verse.verse %></h3>
+  </section>
+  <h1 class="verse-show"><%= @verse.verse %></h1>
 
     <div class="column small-12">
       <div class="row align-middle">
         <div class="column medium-10">
-          <h2>Comentario Bíblico</h2>
+          <h3>Comentario Bíblico</h3>
         </div>
-        <div class="column medium-2">
+        <div class="column medium-2 text-right">
           <%= link_to 'Crear Comentario', new_verse_verse_commentary_path(@verse), class: "button primary tiny" if @verse.verse_commentary.nil? %>
           <%= link_to 'Editar Comentario', edit_verse_verse_commentary_path(@verse.verse_commentary), class: "button primary tiny" if !@verse.verse_commentary.nil? %>
         </div>

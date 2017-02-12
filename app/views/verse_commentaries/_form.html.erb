@@ -12,16 +12,10 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :commentary %>
-    <%= f.cktext_area :commentary %>
+    <%= f.cktext_area :commentary, ckeditor: { language: 'es', height: 550} %>
   </div>
 
-  <div class="field">
-    <%= f.label :verse_id %>
-    <%= f.text_field :verse_id %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions text-right">
+    <%= f.submit class: "button" %>
   </div>
 <% end %>

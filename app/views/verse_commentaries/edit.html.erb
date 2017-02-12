@@ -1,6 +1,4 @@
-<h1>Editing Verse Commentary</h1>
-
-<%= render 'form', verse_commentary: @verse_commentary %>
-
-<%= link_to 'Show', @verse_commentary %> |
-<%= link_to 'Back', verse_commentaries_path %>
+<div class="row">
+  <h1>Editando Comentario <small><%= @verse.book.name %> <%= @verse.chapter.number %>:<%= @verse.number %></small></h1>
+  <%= render 'form', verse_commentary: @verse_commentary %>
+</div>

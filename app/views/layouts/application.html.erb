@@ -16,7 +16,6 @@
     <%= render 'partials/admin_menu' if user_signed_in? %>
     <div id="headerSection" class="row expanded text-center">
       <header>
-
         <%= "<h1 class='logo-text'>#{link_to 'comba', root_path }</h1>".html_safe if controller_name == 'home' %>
         <%= "<h2 class='logo-text'>#{link_to 'comba', root_path }</h2>".html_safe if controller_name != 'home' %>
         <span>Comentario Bíblico Adventista</span>
