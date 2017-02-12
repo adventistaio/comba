@@ -17,10 +17,10 @@
 
     <div class="column small-12">
       <div class="row align-middle">
-        <div class="column medium-10">
+        <div class="column small-8">
           <h3>Comentario Bíblico</h3>
         </div>
-        <div class="column medium-2 text-right">
+        <div class="column small-4 text-right">
           <%= link_to 'Crear Comentario', new_verse_verse_commentary_path(@verse), class: "button primary tiny" if @verse.verse_commentary.nil? %>
           <%= link_to 'Editar Comentario', edit_verse_verse_commentary_path(@verse.verse_commentary), class: "button primary tiny" if !@verse.verse_commentary.nil? %>
         </div>
