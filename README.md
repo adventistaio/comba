@@ -13,6 +13,7 @@ Things you may want to cover:
 * System dependencies
 
 * Configuration
+  Analytics needs set ENVAR -> GOOGLE_ANALYTICS_ID
 
 * Database creation
 
