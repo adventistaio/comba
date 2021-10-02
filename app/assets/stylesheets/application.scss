@@ -49,6 +49,8 @@ header .logo-text a:hover,
 header span{
   background: none;
   color: rgb(237, 237, 237);
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 header .logo-text{
@@ -84,7 +86,7 @@ footer{
 }
 
 header {
-  padding: 1em 2em;
+  padding: 0em 2em;
   background: rgb(18, 86, 168);
 }
 
