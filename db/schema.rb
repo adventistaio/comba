@@ -10,93 +10,91 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170204230203) do
+ActiveRecord::Schema.define(version: 20170108030904) do
 
-  create_table "book_commentaries", force: :cascade do |t|
-    t.text     "commentary"
-    t.integer  "book_id"
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "book_commentaries", id: :serial, force: :cascade do |t|
+    t.text "commentary"
+    t.integer "book_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["book_id"], name: "index_book_commentaries_on_book_id"
   end
 
-  create_table "books", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "section_id"
-    t.integer  "category_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+  create_table "books", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.integer "section_id"
+    t.integer "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_books_on_category_id"
     t.index ["section_id"], name: "index_books_on_section_id"
   end
 
-  create_table "categories", force: :cascade do |t|
-    t.string   "name"
+  create_table "categories", id: :serial, force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "chapters", force: :cascade do |t|
-    t.integer  "number"
-    t.integer  "book_id"
+  create_table "chapters", id: :serial, force: :cascade do |t|
+    t.integer "number"
+    t.integer "book_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["book_id"], name: "index_chapters_on_book_id"
   end
 
-  create_table "ckeditor_assets", force: :cascade do |t|
-    t.string   "data_file_name",               null: false
-    t.string   "data_content_type"
-    t.integer  "data_file_size"
-    t.string   "type",              limit: 30
-    t.integer  "width"
-    t.integer  "height"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.index ["type"], name: "index_ckeditor_assets_on_type"
-  end
-
-  create_table "sections", force: :cascade do |t|
-    t.string   "name"
+  create_table "sections", id: :serial, force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
-    t.string   "reset_password_token"
+  create_table "users", id: :serial, force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
-    t.boolean  "admin",                  default: false
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "verse_commentaries", force: :cascade do |t|
-    t.text     "commentary"
-    t.integer  "verse_id"
+  create_table "verse_commentaries", id: :serial, force: :cascade do |t|
+    t.text "commentary"
+    t.integer "verse_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["verse_id"], name: "index_verse_commentaries_on_verse_id"
   end
 
-  create_table "verses", force: :cascade do |t|
-    t.text     "verse"
-    t.integer  "number"
-    t.integer  "chapter_id"
-    t.integer  "book_id"
+  create_table "verses", id: :serial, force: :cascade do |t|
+    t.text "verse"
+    t.integer "number"
+    t.integer "chapter_id"
+    t.integer "book_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["book_id"], name: "index_verses_on_book_id"
     t.index ["chapter_id"], name: "index_verses_on_chapter_id"
   end
 
+  add_foreign_key "book_commentaries", "books"
+  add_foreign_key "books", "categories"
+  add_foreign_key "books", "sections"
+  add_foreign_key "chapters", "books"
+  add_foreign_key "verse_commentaries", "verses"
+  add_foreign_key "verses", "books"
+  add_foreign_key "verses", "chapters"
 end

@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-ruby '>= 3.0.1'
+ruby '>= 2.5.7'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.0'
+gem 'rails', '~> 5.1.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -35,13 +35,6 @@ gem 'devise'
 
 # Redcarpet for markdown
 gem 'redcarpet'
-
-# Foundation for frontend
-gem 'foundation-rails'
-
-gem 'ckeditor'
-gem 'carrierwave'
-gem 'mini_magick'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
