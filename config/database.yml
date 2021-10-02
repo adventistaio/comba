@@ -1,0 +1,30 @@
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+#
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+  username: postgres
+  password: development
+  host: localhost
+
+development:
+  <<: *default
+  database: comba_development
+
+test:
+  <<: *default
+  database: comba_test
+
+production:
+  database: comba_production
+  encoding: unicode
+  username: comba
+  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
