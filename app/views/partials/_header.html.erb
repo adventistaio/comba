@@ -1,0 +1,8 @@
+<header>
+  <% if controller_name == 'home' %>
+    <span class='logo-text'><%= link_to 'comba', root_path %></span>
+  <% elsif controller_name != 'home' %>
+    <h2 class='logo-text'><%= link_to 'comba', root_path %></h2>
+  <% end %>
+  <h1>Comentario Bíblico Adventista</h1>
+</header>

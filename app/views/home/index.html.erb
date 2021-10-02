@@ -10,8 +10,8 @@
   </div>
   <div id="randomVerseContainer" class="column">
     <% today_verse = Verse.find_by('id = ?', rand(Verse.count)) %>
-    <h3 class="verse"><%= today_verse.verse %></h3>
-    <h5 class="cite"><%= link_to "#{today_verse.book.name} #{today_verse.chapter.number}:#{today_verse.number}", today_verse %></h5>
+    <h3 class="verse"><%= today_verse&.verse %></h3>
+    <h5 class="cite"><%= link_to "#{today_verse&.book&.name} #{today_verse&.chapter&.number}:#{today_verse&.number}", today_verse %></h5>
   </div>
 
 </div>

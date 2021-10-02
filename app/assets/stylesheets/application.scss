@@ -12,8 +12,6 @@
  *
  *= require_tree .
  *= require_self
- *= require foundation_and_overrides
- *= require foundation-icons
 */
 
 a:hover{
@@ -31,14 +29,15 @@ a.button:hover{
 }
 
 body{
+  min-height: 100vh;
   margin: 0;
-  position: relative;
-  min-height: 100%;
+  padding: 0;
+  font-family: 'Nunito', serif;
+  font-size: 16px;
 }
 
 h1,h2,h3,h4,h5,h6{
   color: rgb(0, 128, 182);
-  font-family: 'Bree Serif', serif;
 }
 
 h1::before{
@@ -53,21 +52,9 @@ header span{
 }
 
 header .logo-text{
-  font-family: 'Bree Serif', serif;
+  font-family: 'Nunito', serif;
   font-size: 2.5em;
   margin-bottom: 0;
-}
-
-header h2.logo-text{
-  font-size: 2em;
-}
-
-header span{
-  font-size: 1em;
-}
-
-html{
-  height: 100%;
 }
 
 #adminBar{
@@ -86,17 +73,18 @@ html{
   padding-bottom: 5em;
 }
 
-#footerContainer footer{
+footer{
   color: white;
   background: rgb(0, 45, 69);
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  padding-top: 1em;
+  padding: .2em 2em;
 }
 
-#headerSection{
+header {
+  padding: 1em 2em;
   background: rgb(18, 86, 168);
 }
 
@@ -179,7 +167,7 @@ html{
 }
 
 .primary-font{
-  font-family: 'Bree Serif', serif;
+  font-family: 'Nunito', serif;
 }
 
 .flex-v-center{
