@@ -49,6 +49,7 @@ header {
 main {
   grid-area: main;
   display: flex;
+  flex-direction: column;
 }
 
 header .logo-text a,
@@ -175,6 +176,23 @@ footer{
 
 .primary-font{
   font-family: 'Nunito', serif;
+}
+
+.flash {
+  padding: .2em;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+
+  &.alert {
+    border-top: 2px solid red;
+    border-bottom: 2px solid red;
+    color: rgb(255, 240, 240);
+    background: rgb(255, 80, 80);
+  }
+
+  &.notice {
+    background: rgb(200, 180, 170);
+  }
 }
 
 .flex-v-center{
