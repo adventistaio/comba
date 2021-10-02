@@ -11,6 +11,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@700&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;1,800&display=swap" rel="stylesheet"> 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%#= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -21,9 +22,9 @@
     <%= render 'partials/admin_menu' if user_signed_in? %>
     <%= render 'partials/header' %>
 
-    <div id="content">
+    <main>
       <%= yield %>
-    </div>
+    </main>
 
     <%= render 'partials/footer' %>
     <%= render 'partials/google_analytics' %>

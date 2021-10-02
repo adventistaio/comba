@@ -3,6 +3,21 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .logo-name {
+  font-family: 'Ibarra Real Nova';
   margin: 0;
   font-size: 1.5em;
+  color: rgba(255, 255, 255, .7);
+}
+
+.button-outline {
+  border: 1px solid rgb(50, 50, 50);
+  border-radius: 2em;
+  padding: .6em 1.5em;
+  text-decoration: none;
+  color: black;
+
+  &:hover{
+    background-color: rgb(50, 50, 50);
+    color: white;
+  }
 }

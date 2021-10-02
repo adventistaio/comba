@@ -1,0 +1,29 @@
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"] {
+  border: 2px solid gray;
+  border-radius: .3em;
+  height: 2.2em;
+  padding: 0 .6em;
+}
+
+input[type="checkbox"] {
+  height: 2.2em;
+}
+
+.field {
+  font-size: .9em;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: .5em;
+}
+
+.field-h {
+  font-size: .9em;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  margin-bottom: .5em; 
+}

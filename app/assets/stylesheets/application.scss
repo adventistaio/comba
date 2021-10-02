@@ -14,21 +14,13 @@
  *= require_self
 */
 
-a:hover{
-  background: rgb(47, 154, 177);
-  border-radius: .2em;
-  color: white;
-}
-a:visited{
-  color: black;
-}
-
-a.button,
-a.button:hover{
-  color: white;
-}
-
 body{
+  display: grid;
+  grid-template-areas: "header"
+                       "main"
+                       "footer";
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr;
   min-height: 100vh;
   margin: 0;
   padding: 0;
@@ -44,11 +36,28 @@ h1::before{
   border-left: 2px solid black;
 }
 
+header {
+  grid-area: header;
+  display: flex;
+  gap: 1em;
+  padding: .7em 2em;
+  background: linear-gradient(20deg, rgb(18, 86, 168), rgb(38, 106, 158));
+  align-items: center;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+main {
+  grid-area: main;
+  display: flex;
+}
+
 header .logo-text a,
 header .logo-text a:hover,
 header span{
+  margin: 0;
+  font-family: 'Ibarra Real Nova';
   background: none;
-  color: rgb(237, 237, 237);
+  color: rgb(240, 240, 240);
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -76,18 +85,14 @@ header .logo-text{
 }
 
 footer{
+  grid-area: footer;
   color: white;
-  background: rgb(0, 45, 69);
+  background: linear-gradient(90deg, rgb(38, 50, 98), rgb(30, 40, 58), rgb(30, 40, 58), rgb(38, 50, 98));
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   padding: .2em 2em;
-}
-
-header {
-  padding: 0em 2em;
-  background: rgb(18, 86, 168);
 }
 
 #message{
