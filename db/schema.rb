@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2021_10_02_152159) do
   end
 
   create_table "books", id: :serial, force: :cascade do |t|
-    t.string "name"
+    t.text "name"
     t.integer "section_id"
     t.integer "category_id"
     t.datetime "created_at", null: false
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 2021_10_02_152159) do
   end
 
   create_table "categories", id: :serial, force: :cascade do |t|
-    t.string "name"
+    t.text "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -76,22 +76,22 @@ ActiveRecord::Schema.define(version: 2021_10_02_152159) do
   end
 
   create_table "sections", id: :serial, force: :cascade do |t|
-    t.string "name"
+    t.text "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", id: :serial, force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
+    t.text "email", default: "", null: false
+    t.text "encrypted_password", default: "", null: false
+    t.text "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string "current_sign_in_ip"
-    t.string "last_sign_in_ip"
+    t.text "current_sign_in_ip"
+    t.text "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "admin", default: false
@@ -120,11 +120,4 @@ ActiveRecord::Schema.define(version: 2021_10_02_152159) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "book_commentaries", "books"
-  add_foreign_key "books", "categories"
-  add_foreign_key "books", "sections"
-  add_foreign_key "chapters", "books"
-  add_foreign_key "verse_commentaries", "verses"
-  add_foreign_key "verses", "books"
-  add_foreign_key "verses", "chapters"
 end

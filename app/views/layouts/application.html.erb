@@ -19,15 +19,16 @@
   </head>
 
   <body>
-    <%= render 'partials/admin_menu' if user_signed_in? %>
-    <%= render 'partials/header' %>
+    <div class="app-container">
+      <%= render 'partials/header' %>
 
-    <main>
-      <%= render 'partials/flash_messages' %>
-      <%= yield %>
-    </main>
+      <main>
+        <%= render 'partials/flash_messages' %>
+        <%= yield %>
+      </main>
 
-    <%= render 'partials/footer' %>
+      <%= render 'partials/footer' %>
+    </div>
     <%= render 'partials/google_analytics' %>
   </body>
 </html>

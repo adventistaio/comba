@@ -2,22 +2,26 @@
 
   <h1>Libros</h1>
 
-  <div class="column medium-6">
-    <h2>Antiguo Testamento</h2>
-    <% @books.where('section_id = ?', 1).each do |book| %>
-    <div>
-      <%= link_to book.name, book_path(book) %>
+  <div class="books-list-container">
+    
+    <div class="column medium-6">
+      <h2>Antiguo Testamento</h2>
+      <% @books.where('section_id = ?', 1).each do |book| %>
+      <div class="books-list text-left">
+        <%= link_to book.name, book_path(book), class: 'link' %>
+      </div>
+      <% end %>
     </div>
-    <% end %>
-  </div>
 
 
-  <div class="column medium-6">
-    <h2>Nuevo Testamento</h2>
-    <% @books.where('section_id = ?', 2).each do |book| %>
-    <div>
-      <%= link_to book.name, book_path(book) %>
+    <div class="column medium-6">
+      <h2>Nuevo Testamento</h2>
+      <% @books.where('section_id = ?', 2).each do |book| %>
+      <div class="books-list text-left">
+        <%= link_to book.name, book_path(book), class: 'link' %>
+      </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
+
 </div>

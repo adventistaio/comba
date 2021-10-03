@@ -4,5 +4,12 @@
   <% elsif controller_name != 'home' %>
     <span class='logo-text'><%= link_to 'comba', root_path %></span>
   <% end %>
-  <h1 class="logo-name">Comentario Bíblico Adventista</h1>
+  <h1 class="logo-name flex-grow">Comentario Bíblico Adventista</h1>
+
+  <div class="right">
+      <% if user_signed_in? %>
+        <%= link_to current_user.email, edit_user_registration_path, class: 'link white' %> -
+        <%= link_to "salir", destroy_user_session_path, :method => :delete, class: 'link white'  %>
+      <% end %>
+    </div>
 </header>

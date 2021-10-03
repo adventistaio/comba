@@ -1,4 +1,4 @@
-<div class="row">
+<div class="book-container">
   <div class="column small-12 text-center book-title">
     <h1 class="detailed"> <%= link_to '<', @book.prev if !@book.prev.nil? %> <%= @book.name %> <%= link_to '>', @book.next if !@book.nil? %></h1>
     <p>
