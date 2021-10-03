@@ -166,6 +166,14 @@ footer{
   line-height: 1.4em;
 }
 
+.link {
+  text-decoration: none;
+
+  &.white {
+    color: white;
+  }
+}
+
 .commentary h2,
 .commentary h3,
 .commentary h4,
@@ -191,7 +199,10 @@ footer{
   }
 
   &.notice {
-    background: rgb(200, 180, 170);
+    border-top: 2px solid rgb(80, 255, 80);
+    border-bottom: 2px solid rgb(80, 255, 80);
+    color: rgb(240, 255, 240);
+    background: rgb(55, 200, 55);
   }
 }
 
