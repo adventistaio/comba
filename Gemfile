@@ -31,12 +31,12 @@ gem 'jbuilder', '~> 2.11.2'
 # Devise for login users
 gem 'devise'
 
-# Redcarpet for markdown
-gem 'redcarpet'
-
 gem 'bootsnap', '~> 1.1', '>= 1.1.7'
 
 gem 'webpacker', '~> 6.0.0.rc.5'
+
+gem "image_processing", ">= 1.2"
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

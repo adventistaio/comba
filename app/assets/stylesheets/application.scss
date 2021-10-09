@@ -14,6 +14,8 @@
  *= require_self
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&display=swap');
+
 $text-black: rgb(50, 50, 50);
 
 body {
@@ -25,8 +27,8 @@ body {
   position: relative;
   display: grid;
   grid-template-areas: "header"
-                       "main"
-                       "footer";
+    "main"
+    "footer";
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 1fr;
   min-height: 100vh;
@@ -36,11 +38,7 @@ body {
   font-size: 16px;
 }
 
-h1,h2,h3,h4,h5,h6{
-  color: rgb(0, 128, 182);
-}
-
-h1::before{
+h1::before {
   border-left: 2px solid black;
 }
 
@@ -64,7 +62,7 @@ main {
 
 header .logo-text a,
 header .logo-text a:hover,
-header span{
+header span {
   margin: 0;
   font-family: 'Ibarra Real Nova';
   background: none;
@@ -73,13 +71,13 @@ header span{
   text-transform: uppercase;
 }
 
-header .logo-text{
+header .logo-text {
   font-family: 'Nunito', serif;
   font-size: 2.5em;
   margin-bottom: 0;
 }
 
-footer{
+footer {
   grid-area: footer;
   color: white;
   background: linear-gradient(90deg, rgb(38, 50, 98), rgb(30, 40, 58), rgb(30, 40, 58), rgb(38, 50, 98));
@@ -90,51 +88,40 @@ footer{
   padding: .2em 2em;
 }
 
-#content{
-  padding-bottom: 5em;
+.content {
+  margin: 0 5em;
 }
 
-#message{
-    margin: 6em 0;
+.container {
+  min-width: 980px;
+  max-width: 980px;
+  margin: 0 auto;
 }
 
-#randomVerseContainer{
+#randomVerseContainer {
   padding: 3em;
 }
-#randomVerseContainer .verse{
-  color: rgb(0, 128, 182);
+
+#randomVerseContainer .verse {
   font-style: italic;
   font-weight: bold;
 }
 
-#randomVerseContainer .cite{
-  background: rgb(8, 120, 150);
-  border-radius: 1em;
-  color: rgb(235, 235, 235);
-  display: inline-block;
-  font-weight: bold;
-  padding: .1em 1em;
-}
-
-#randomVerseContainer .cite a,
-#randomVerseContainer .cite a:hover{
-  color: rgb(235, 235, 235);
-  background: none;
-}
-
-.book-title{
-  h1{
+.book-title {
+  h1 {
     margin-bottom: 0;
   }
-  p{
+
+  p {
     margin: 0;
   }
 }
 
-.commentary{
+.commentary {
   background: rgb(244, 244, 244);
 }
-.commentary p{
+
+.commentary p {
   font-family: Georgia;
   font-size: 1.35em;
   line-height: 1.4em;
@@ -153,11 +140,11 @@ footer{
 .commentary h3,
 .commentary h4,
 .commentary h5,
-.commentary h6{
+.commentary h6 {
   color: rgb(112, 0, 120);
 }
 
-.primary-font{
+.primary-font {
   font-family: 'Nunito', serif;
 }
 
@@ -181,15 +168,7 @@ footer{
   }
 }
 
-.flex-v-center{
+.flex-v-center {
   display: flex;
   align-items: center;
-}
-
-.verse_link {
-
-}
-
-.verse-show{
-  font-size: 3em;
 }

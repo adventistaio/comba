@@ -1,14 +1,18 @@
-<div class="row">
+<div class="container">
   <h1 class="text-center">
-    <%= link_to @chapter.book.name, @chapter.book %>
-    <%= link_to '<', @chapter.prev if !@chapter.prev.nil? %>
-    <%= @chapter.number.to_s %>
-    <%= link_to '>', @chapter.next if !@chapter.next.nil? %>
+    <%= link_to @chapter.book.name, @chapter.book, class: :link %>
+    <small>
+      <%= link_to @chapter.prev.number, @chapter.prev, class: 'chapter-prev' if !@chapter.prev.nil? %>
+    </small>
+    <%= @chapter.number %>
+    <small>
+      <%= link_to @chapter.next.number, @chapter.next, class: 'chapter-next' if !@chapter.next.nil? %>
+    </small>
   </h1>
-  <div class="column small-12 chapters text-center">
+  <div class="column small-12 chapters-list text-center">
     <% @chapter.book.chapters.each do |chapter| %>
     <div class="link-container">
-      <%= link_to chapter.number, chapter_path(chapter) %>
+      <%= link_to chapter.number, chapter_path(chapter), class: :link %>
     </div>
     <% end %>
   </div>
@@ -16,13 +20,13 @@
     <h2>Versos</h2>
     <div class="">
       <% @chapter.verses.each do |verse| %>
-      <div class="verse_link">
-        <h6>
+      <div class="verse-link">
+        <%= link_to verse_path(verse), class: :link do %>
           <strong>
-            <%= link_to verse.number, verse_path(verse) %>
+            <%= verse.number %>
           </strong>
           <%= verse.verse %>
-        </h6>
+        <% end %>
       </div>
       <% end %>
     </div>

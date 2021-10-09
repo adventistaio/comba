@@ -1,15 +1,15 @@
-<div class="row">
+<div class="container">
   <h2 class="text-center">
     <%= link_to @verse.book.name, @verse.book %>
     <%= @verse.chapter.number.to_s %>:
-    <%= link_to '<', @verse.prev if !@verse.prev.nil? %>
+    <%#= link_to '<', @verse.prev if !@verse.prev.nil? %>
     <%= @verse.number.to_s %>
-    <%= link_to '>', @verse.next if !@verse.next.nil? %>
+    <%#= link_to '>', @verse.next if !@verse.next.nil? %>
   </h2>
-  <section class="text-center verses">
+  <section class="text-center verses-list">
     <% @verse.chapter.verses.each do |verse| %>
     <div class="link-container">
-      <%= link_to verse.number, verse_path(verse) %>
+      <%= link_to verse.number, verse_path(verse), class: 'link' %>
     </div>
     <% end %>
   </section>
@@ -25,12 +25,8 @@
           <%= link_to 'Editar Comentario', edit_verse_verse_commentary_path(@verse.verse_commentary), class: "button primary tiny" if !@verse.verse_commentary.nil? %>
         </div>
       </div>
-      <div class="column small-12 commentary">
-        <% if @verse.verse_commentary  %>
-          <%= markdown(@verse.verse_commentary.commentary).html_safe %>
-        <% else %>
-          Este versiculo no tiene comentario.
-        <% end %>
+      <div class="column small-12 commentary trix-content">
+        <%= @verse.verse_commentary&.comment ?  @verse.verse_commentary.commentary : "Este versiculo no tiene comentario." %>
       </div>
     </div>
 </div>

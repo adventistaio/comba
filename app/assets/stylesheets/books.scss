@@ -2,60 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.book-container {
-  margin: 0 10em;
-
-  .commentary {
-    border-radius: 1em;
-    box-shadow: 1px 1px 20px rgb(210, 210, 210);
-    padding: 1em 3em;
-    margin-bottom: 5em;
-  }
-
-  .chapters{
-    padding: 1em 0 2em 0;
-
-    .link-container{
-      margin: .3em .1em !important;
-      display: inline-block;
-    }
-
-    a{
-      text-decoration: none;
-      color: white;
-      background-color: #505050;
-      font-size: 1.2em;
-      border-radius: .2em;
-      padding: .3em .2em .2em .2em;
-      transition: all .3s;
-
-      &:hover{
-        color: white;
-        background-color: rgb(255, 179, 0);
-      }
-    }
-  }
-
-  .verses{
-  padding: 1em 0 2em 0;
-
-  .link-container{
-    margin: .3em .1em !important;
-    display: inline-block;
-  }
-
-  a{
-    background-color: #e4e4e4;
-    font-size: 1.2em;
-    border-radius: .2em;
-    padding: .2em .2em;
-    transition: all .3s;
-
-    &:hover{
-      background-color: rgb(0, 171, 255);
-     }
-  }
-}
+.book-prev,
+.book-next {
+  font-size: 1.4em;
+  color: rgba(0, 0, 0, .4);
+  text-decoration: none;
 }
 
 .books-list-container {
@@ -65,7 +16,7 @@
 
   .books-list {
     margin-left: 1em;
-    padding-left: 1em ;
+    padding-left: 1em;
     border-left: 2px solid rgb(80, 100, 200);
   }
 }

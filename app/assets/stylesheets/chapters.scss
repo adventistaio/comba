@@ -1,3 +1,16 @@
 // Place all the styles related to the Chapters controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.chapters-list {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+}
+
+.chapter-prev,
+.chapter-next {
+  font-size: .7em;
+  color: rgba(0, 0, 0, .3);
+  text-decoration: none;
+}

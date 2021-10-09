@@ -1,9 +1,17 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <h1>
+    Libros
+    <strong><%= @category.name %></strong>
+  </h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
+  <ul>
+    <% @category.books.each do |book| %>
+      <li>
+        <%= link_to book.name, book, class: :link %>
+      </li>
+    <% end %>
+  </ul>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+  <%= link_to 'Editar', edit_category_path(@category), class: :link %> |
+  <%= link_to 'Atrás', categories_path, class: :link %>
+</div>
