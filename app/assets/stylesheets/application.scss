@@ -14,6 +14,7 @@
  *= require_self
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&display=swap');
 
 $text-black: rgb(50, 50, 50);
@@ -34,7 +35,8 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  font-family: 'Nunito', serif;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
   font-size: 16px;
 }
 
@@ -52,11 +54,15 @@ header {
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
 
+hr {
+  border: none;
+  border-bottom: 1px solid darkgray;
+}
+
 main {
   grid-area: main;
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
   margin-bottom: 5em;
 }
 
@@ -95,7 +101,7 @@ footer {
 .container {
   min-width: 980px;
   max-width: 980px;
-  margin: 0 auto;
+  margin: 2em auto;
 }
 
 #randomVerseContainer {
@@ -107,26 +113,6 @@ footer {
   font-weight: bold;
 }
 
-.book-title {
-  h1 {
-    margin-bottom: 0;
-  }
-
-  p {
-    margin: 0;
-  }
-}
-
-.commentary {
-  background: rgb(244, 244, 244);
-}
-
-.commentary p {
-  font-family: Georgia;
-  font-size: 1.35em;
-  line-height: 1.4em;
-}
-
 .link {
   color: $text-black;
   text-decoration: none;
@@ -134,14 +120,10 @@ footer {
   &.white {
     color: white;
   }
-}
 
-.commentary h2,
-.commentary h3,
-.commentary h4,
-.commentary h5,
-.commentary h6 {
-  color: rgb(112, 0, 120);
+  &.active {
+    text-decoration: underline;
+  }
 }
 
 .primary-font {
@@ -171,4 +153,22 @@ footer {
 .flex-v-center {
   display: flex;
   align-items: center;
+}
+
+.old-comment {
+  background: #EEE;
+  padding: 1em;
+  border-radius: .5em;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, .4);
+}
+
+trix-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+  padding: 5px 5px 0 5px;
+  background-color: white;
+  border-radius: .2em;
+  box-shadow: 0 3px 6px rgb(200, 200, 200);
 }

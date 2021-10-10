@@ -1,0 +1,22 @@
+.container
+  h2.text-center
+    = link_to @verse.book.name, @verse.book
+    = @verse.chapter.number.to_s
+    | :
+    /= link_to '<', @verse.prev if !@verse.prev.nil?
+    = @verse.number.to_s
+    /= link_to '>', @verse.next if !@verse.next.nil?
+  h2
+  section.text-center.verses-list
+    - @verse.chapter.verses.each do |verse|
+      .link-container
+        = link_to verse.number, verse_path(verse), class: "link #{'active' if verse.number == @verse.number}"
+  h1.verse-show = @verse.verse
+
+  div
+    h3 Comentario Bíblico
+    div
+      = link_to 'Crear Comentario', new_verse_verse_commentary_path(@verse), class: "button primary tiny" if @verse.verse_commentary.nil?
+      = link_to 'Editar Comentario', edit_verse_verse_commentary_path(@verse.verse_commentary), class: "button primary tiny" if !@verse.verse_commentary.nil?
+    div
+      == @verse.comment.present? ?  @verse.comment : "Este versiculo no tiene comentario."

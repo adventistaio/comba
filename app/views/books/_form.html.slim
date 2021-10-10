@@ -1,0 +1,24 @@
+= form_for(@book, class: 'book-comment-edit') do |f|
+  - if @book.errors.any?
+    #error_explanation
+      h2 
+        = pluralize(@book.errors.count, "error")
+        | prohibited this @book from being saved:
+
+      ul
+      - @book.errors.full_messages.each do |message|
+        li = message
+
+  .field
+    = f.label :descriptive_image, 'Imágen'
+    = f.file_field :descriptive_image
+  = image_tag url_for(@book.descriptive_image), height: '150px' if @book.descriptive_image.attached?
+
+  hr
+
+  .field
+    = f.label :comment, 'Comentario del Libro'
+    = f.rich_text_area :comment
+
+  .actions.text-right
+    = f.submit class: 'button-send'

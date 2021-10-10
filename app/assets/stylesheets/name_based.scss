@@ -26,6 +26,18 @@
   float: right;
 }
 
+.flex {
+  display: flex;
+
+  &.justify-between {
+    justify-content: space-between;
+  }
+
+  &.align-center {
+    align-items: center;
+  }
+}
+
 .flex-grow {
   flex-grow: 1;
 }

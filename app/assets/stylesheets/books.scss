@@ -2,11 +2,42 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+form.edit_book {
+  .actions {
+    position: sticky;
+    bottom: 4px;
+    margin-top: 5px;
+  }
+}
+
+.book-descriptive-image {
+  box-shadow: 2px 2px 12px #BBB;
+  display: block;
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 1em;
+}
+
+.book-title {
+  h1 {
+    font-size: 3em;
+    margin: 0 1em;
+    font-family: 'Frank+Ruhl+Libre';
+  }
+}
+
 .book-prev,
 .book-next {
-  font-size: 1.4em;
-  color: rgba(0, 0, 0, .4);
-  text-decoration: none;
+  font-family: 'Frank+Ruhl+Libre';
+  display: inline-block;
+  width: 200px;
+
+  a {
+    color: rgba(0, 0, 0, .4);
+    text-decoration: none;
+    font-size: 1.4em;
+  }
 }
 
 .books-list-container {

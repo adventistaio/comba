@@ -12,18 +12,31 @@ input[type="checkbox"] {
   height: 2.2em;
 }
 
-.field {
-  font-size: .9em;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  margin-bottom: .5em;
-}
+form {
 
-.field-h {
-  font-size: .9em;
-  display: flex;
-  align-items: center;
-  text-align: left;
-  margin-bottom: .5em; 
+  .button-send {
+    font-weight: bold;
+    cursor: pointer;
+    color: #555;
+    background-color: white;
+    font-size: 1.2em;
+    padding: .5em 2em;
+    border-radius: 1.5em;
+    border: 3px solid rgb(0, 185, 160);
+    box-shadow: 3px 4px 0px #BBB;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 1em;
+  }
+
+  .field-h {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 1em;
+  }
 }

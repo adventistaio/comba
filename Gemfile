@@ -35,7 +35,9 @@ gem 'bootsnap', '~> 1.1', '>= 1.1.7'
 
 gem 'webpacker', '~> 6.0.0.rc.5'
 
-gem "image_processing", ">= 1.2"
+gem 'image_processing', '>= 1.2'
+
+gem 'slim'
 
 
 group :development, :test do
