@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .logo-name {
-  font-family: 'Ibarra Real Nova';
   margin: 0;
   font-size: 1.5em;
   color: rgba(255, 255, 255, .7);
@@ -23,14 +22,12 @@
 }
 
 .cite {
-  font-size: 1.5em;
+  font-size: 2em;
+  font-weight: 200;
 }
 
 .home-random-verse {
   color: rgb(50, 50, 50);
-  font-family: "Frank Ruhl Libre";
   font-size: 3em;
   text-shadow: 1px 1px 16px rgb(200, 200, 200);
 }
-
-.home-app-description {}

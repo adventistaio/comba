@@ -1,0 +1,13 @@
+header
+  - if controller_name == 'home'
+    span.logo-text.font-title.font-bold = link_to 'comba', root_path
+  - elsif controller_name != 'home'
+    span.logo-text.font-title.font-bold = link_to 'comba', root_path
+
+  h1.logo-name.flex-grow Comentario Bíblico Adventista
+
+  .right
+    - if user_signed_in?
+      = link_to current_user.email, edit_user_registration_path, class: 'link white'
+      | -
+      = link_to "salir", destroy_user_session_path, :method => :delete, class: 'link white'

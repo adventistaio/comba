@@ -1,0 +1,15 @@
+.container
+  = render partial: 'books/book_header', locals: { book: @chapter.book }
+  .books-and-verses-container
+    = render partial: 'books/chapters', locals: { book: @chapter.book, active_chapter: @chapter }
+    = render partial: 'verses', locals: { chapter: @chapter }
+  
+  div
+    h2 Versos
+    div
+      - @chapter.verses.each do |verse|
+        .verse-link
+          = link_to verse_path(verse), class: :link do
+            strong
+              = verse.number
+              = verse.verse

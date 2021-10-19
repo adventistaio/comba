@@ -2,15 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.chapters-list {
+.books-and-verses-container {
   display: flex;
-  gap: 1em;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
-.chapter-prev,
-.chapter-next {
-  font-size: .7em;
-  color: rgba(0, 0, 0, .3);
-  text-decoration: none;
+.verses-list {
+  display: grid;
+  grid-template-columns: repeat(10, auto);
+  gap: .4em 1.5em;
+  justify-content: center;
+  font-weight: 400;
+  font-size: .9em;
 }

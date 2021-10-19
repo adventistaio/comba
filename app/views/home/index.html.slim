@@ -1,0 +1,17 @@
+.content
+  .column.hide-for-small-only
+    section.home-app-description
+      h4.text-center.text- Profundiza en el estudio de la Biblia, con comentarios de cada versiculo en al Biblia.</h4>
+
+  .column.small-12.text-center
+    br
+    = link_to 'Libros', books_path, class: "button-outline"
+  #randomVerseContainer.column
+    - random_verse = Verse.random
+    h3.home-random-verse.font-read = random_verse&.verse.capitalize
+    h5.cite
+      = link_to random_verse, class: 'link' do
+        div.font-bold = random_verse.cite
+        small.font-thin Ver explicación
+        
+        

@@ -1,13 +1,12 @@
 .container
-  h2.text-center
-    = link_to @verse.book.name, @verse.book
-    = @verse.chapter.number.to_s
-    | :
-    /= link_to '<', @verse.prev if !@verse.prev.nil?
-    = @verse.number.to_s
-    /= link_to '>', @verse.next if !@verse.next.nil?
+  = render partial: 'books/book_header', locals: { book: @verse.book }
+
+  .books-and-verses-container
+    = render partial: 'books/book_header', locals: { book: @verse.book }
+    = render partial: 'books/chapters', locals: { book: @verse.book, active_chapter: @verse.chapter }
+
   h2
-  section.text-center.verses-list
+  section.verses-list
     - @verse.chapter.verses.each do |verse|
       .link-container
         = link_to verse.number, verse_path(verse), class: "link #{'active' if verse.number == @verse.number}"

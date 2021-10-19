@@ -1,0 +1,6 @@
+section
+  h2.font-weight-light Versos
+  .verses-list.text-center
+    - chapter.verses.each do |verse|
+      .link-container
+        = link_to verse.number, verse_path(verse), class: :link

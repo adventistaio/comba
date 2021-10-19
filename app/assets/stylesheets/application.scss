@@ -10,14 +10,29 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+ * require_tree .
+ * require_self
+ *= require trix
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+$font-text: 'Mulish';
+$font-title: 'Frank Ruhl Libre';
+$font-read: 'Lora';
 
 $text-black: rgb(50, 50, 50);
+
+@import 'actiontext';
+@import 'name_based';
+@import 'home';
+@import 'books';
+@import 'chapters';
+@import 'verses';
+
+
 
 body {
   padding: 0;
@@ -35,7 +50,7 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $font-text, sans-serif;
   font-weight: 400;
   font-size: 16px;
 }
@@ -70,7 +85,7 @@ header .logo-text a,
 header .logo-text a:hover,
 header span {
   margin: 0;
-  font-family: 'Ibarra Real Nova';
+  font-family: $font-title;
   background: none;
   color: rgb(240, 240, 240);
   text-decoration: none;
@@ -119,10 +134,6 @@ footer {
 
   &.white {
     color: white;
-  }
-
-  &.active {
-    text-decoration: underline;
   }
 }
 

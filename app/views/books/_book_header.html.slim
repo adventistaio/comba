@@ -1,0 +1,13 @@
+= image_tag url_for(book.descriptive_image), class: 'book-descriptive-image' if book.descriptive_image.attached?
+.text-center.book-title
+  .book-prev.text-right
+    = link_to book.prev.name, book.prev if !book.prev.nil?
+  h1.inline.font-bold
+    = book.name
+  .book-next.text-left
+    = link_to book.next.name, book.next if !book.nil?
+
+  p
+    = book.section.name
+    br
+    = link_to book.category.name, category_path(book.category), class: :link

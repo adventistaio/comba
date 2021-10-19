@@ -1,0 +1,9 @@
+- active_chapter ||= nil
+
+section
+  h2.font-weight-light Capítulos
+  .chapters-list.text-center
+    span
+    - book.chapters.each do |chapter|
+      .link-container class=('active' if chapter == active_chapter)
+        = link_to chapter.number, chapter_path(chapter), class: "link #{'active' if chapter == active_chapter}"
