@@ -2,9 +2,3 @@
   h1 Editanto el libro de #{@book.name}
 
   = render 'form'
-
-.container
-  hr
-  h2 Comentario anterior (Debe ser copiado arriba)
-  .old-comment
-    div = @book.book_commentary.commentary.html_safe
