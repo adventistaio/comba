@@ -1,0 +1,180 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ * require_tree .
+ * require_self
+ *= require trix
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+@import './stylesheets/vars';
+@import './stylesheets/actiontext';
+@import './stylesheets/name_based';
+@import './stylesheets/home';
+@import './stylesheets/books';
+@import './stylesheets/chapters';
+@import './stylesheets/verses';
+
+
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.app-container {
+  position: relative;
+  display: grid;
+  grid-template-areas: "header"
+    "main"
+    "footer";
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: $font-text, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+h1::before {
+  border-left: 2px solid black;
+}
+
+header {
+  grid-area: header;
+  display: flex;
+  gap: 1em;
+  padding: .7em 2em;
+  background: linear-gradient(20deg, rgb(18, 86, 168), rgb(38, 106, 158));
+  align-items: center;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid darkgray;
+}
+
+main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5em;
+}
+
+header .logo-text a,
+header .logo-text a:hover,
+header span {
+  margin: 0;
+  font-family: $font-title;
+  background: none;
+  color: rgb(240, 240, 240);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+header .logo-text {
+  font-family: 'Nunito', serif;
+  font-size: 2.5em;
+  margin-bottom: 0;
+}
+
+footer {
+  grid-area: footer;
+  color: white;
+  background: linear-gradient(90deg, rgb(38, 50, 98), rgb(30, 40, 58), rgb(30, 40, 58), rgb(38, 50, 98));
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: .2em 2em;
+}
+
+.content {
+  margin: 0 5em;
+}
+
+.container {
+  min-width: 980px;
+  max-width: 980px;
+  margin: 2em auto;
+}
+
+#randomVerseContainer {
+  padding: 3em;
+}
+
+#randomVerseContainer .verse {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.link {
+  color: $text-black;
+  text-decoration: none;
+
+  &.white {
+    color: white;
+  }
+}
+
+.primary-font {
+  font-family: 'Nunito', serif;
+}
+
+.flash {
+  padding: .2em;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+
+  &.alert {
+    border-top: 2px solid red;
+    border-bottom: 2px solid red;
+    color: rgb(255, 240, 240);
+    background: rgb(255, 80, 80);
+  }
+
+  &.notice {
+    border-top: 2px solid rgb(80, 255, 80);
+    border-bottom: 2px solid rgb(80, 255, 80);
+    color: rgb(240, 255, 240);
+    background: rgb(55, 200, 55);
+  }
+}
+
+.flex-v-center {
+  display: flex;
+  align-items: center;
+}
+
+.old-comment {
+  background: #EEE;
+  padding: 1em;
+  border-radius: .5em;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, .4);
+}
+
+trix-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+  padding: 5px 5px 0 5px;
+  background-color: white;
+  border-radius: .2em;
+  box-shadow: 0 3px 6px rgb(200, 200, 200);
+}
