@@ -16,7 +16,5 @@ test:
   database: comba_test
 
 production:
-  database: comba_production
+  database: <%= ENV['DATABASE_URL'] %>
   encoding: unicode
-  username: comba
-  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
